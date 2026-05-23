@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Secure Login System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="dashboard-wrapper">
+    <div class="dashboard-header">
+        <div class="dashboard-title">
+            <h1>Welcome back, <span class="username">{{ username }}</span>! 👋</h1>
+        </div>
+        <a href="{{ url_for('logout') }}" class="logout">Logout</a>
+    </div>
+
+    <div class="dashboard-content">
+        <div class="welcome-card">
+            <div class="card-icon">✅</div>
+            <h2>You're Logged In</h2>
+            <p>You have successfully logged into your secure account. Your data is encrypted and safe.</p>
+        </div>
+    </div>
+</div>
+
+<style>
+.dashboard-wrapper {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.dashboard-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.dashboard-title h1 {
+    color: white;
+    font-size: 36px;
+    margin: 0;
+}
+
+.dashboard-title .username {
+    font-weight: 700;
+    background: linear-gradient(135deg, #fff, #f0f0f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.dashboard-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.welcome-card {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.card-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+.welcome-card h2 {
+    color: #2d3748;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.welcome-card p {
+    color: #718096;
+    font-size: 16px;
+    line-height: 1.6;
+}
+</style>
+</body>
+</html>
